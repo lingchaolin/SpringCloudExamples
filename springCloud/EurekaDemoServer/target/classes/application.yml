@@ -1,0 +1,15 @@
+server:
+  port: 8761 #端口号
+
+eureka:
+  instance:
+    hostname: localhost        #hostname与此实例相关联的主机名
+  client:
+    registerWithEureka: false  #实例是否在eureka服务器上注册自己的信息以供其他服务发现，默认为true
+    fetchRegistry: false       # 一个项目对应一个配置文件
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #Eureka服务器的连接，默认为http：//XXXX：X/eureka/,但是如果采用DNS方式获取服务地址，则不需要配置此设置。
+spring:   #????
+  application:
+    name: eureka-service
